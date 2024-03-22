@@ -33,12 +33,28 @@ module tb_;
     real    real_b;
     time    time_c;
 
+    reg [8*11:1] str1; // each char takes 1byte = 8bit
+    reg [8*5:1] str2;
+    reg [8*20:1] str3;
+
     initial begin
         int_a = 32'hcafe_1234; //_ just as deliminator for readablity
         real_b = 0.12345;
 
-        #20;
+        str1 = "Hello world";
+        str2 = "Hello world";
+        str3 = "Hello world";
+
+        #20;    // Advance simulation time by 20 units
         time_c = $time;
+        
+        // Print all varaibles using $display system task
+        $display("init_a = 0x%h", int_a); //init_a = 0xcafe1234
+        $display("real_b = %0.5f", real_b); //real_b = 0.12345
+        $display("time_c = %t", time_c); //time_c =                   20
+        $display("str1 = %s", str1); //str1 = Hello world
+        $display("str2 = %s", str2); //str2 = world
+        $display("str3 = %s", str3); //str3 =          Hello world
     end
 
 endmodule
