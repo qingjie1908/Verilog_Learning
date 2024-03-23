@@ -1,4 +1,4 @@
-module tb
+module tb;
     // 1. declare the input/output varables to drive the design
     reg tb_clk;
     reg tb_d;

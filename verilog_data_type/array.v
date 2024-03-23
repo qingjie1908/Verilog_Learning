@@ -20,7 +20,7 @@ module des();
                 $display("mem3[%0d][%0d] = 0x%0h", i, j, mem3[i][j]);
             end
         end
-        mem3[0][0][15:8] = 8'haa;
+        mem3[0][0][15:8] = 8'haa; // first array index [0][0], then vector selct
         $display("mem3[0][0] = 0x%0h", mem3[0][0]); //0xaa00
     end
 endmodule
@@ -37,3 +37,7 @@ mem3[3][0] = 0x3
 mem3[3][1] = 0x4
 mem3[0][0] = 0xaa00
 */
+
+// memory
+// 1-D array of reg
+reg [7:0] mem [256];

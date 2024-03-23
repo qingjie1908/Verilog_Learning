@@ -1,9 +1,9 @@
 // dff is the name of this module
 module dff (input  d,
-                    rsrn,
+                    rstn,
                     clk,
-            output q);
-    reg q;
+            output reg q);
+    // reg q; redeclaration, wrong
 
     always @(posedge clk) begin
         if (!rstn)
